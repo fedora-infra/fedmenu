@@ -1,0 +1,21 @@
+#fedmenu-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    -webkit-filter: drop-shadow(20px 20px 20px #222);
+    filter:         drop-shadow(20px 20px 20px #222);
+}
+#fedmenu-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.fedmenu-hidden { display: none; }
+.fedmenu-radial-shadow {
+  background-color: rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 400px rgba(0,0,0,1);
+          box-shadow: inset 0 0 400px rgba(0,0,0,1);
+}
