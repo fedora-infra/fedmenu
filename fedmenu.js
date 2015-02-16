@@ -11,13 +11,18 @@ $(document).ready(function() {
         dataType: 'script',
         success: function(script) {
             $.each(json.children, function(i, child) {
-                $("#fedmenu-content").append(
-                    "<div class='fedmenu-header'>" + child.name + "</div><ul>");
+                var html =
+                    "<div class='fedmenu-panel'><div class='fedmenu-header'>" +
+                    child.name + "</div><ul>";
+
                 $.each(child.children, function(j, grandchild) {
-                    $("#fedmenu-content").append(
-                        "<li><a href='" + grandchild.data.url + "'>" + grandchild.name + "</a></li>");
+                    html = html +
+                        "<li><a href='" + grandchild.data.url + "'>" +
+                        $("<p>" + grandchild.name + "</p>").text() +
+                        "</a></li>";
                 });
-                $("#fedmenu-content").append("</ul>");
+                html = html + "</ul></div>";
+                $("#fedmenu-content").append(html);
             });
         },
     });

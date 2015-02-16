@@ -63,6 +63,7 @@
     top: 100%;
     left: 15%;
     width: 70%;
+    /* max-width: 890px; */
 
     background-color: #FFF;
     margin-bottom: 20px;
@@ -87,4 +88,30 @@
     font-family: Montserrat;
     font-weight: bold;
     border-bottom: 2px solid;
+}
+
+.fedmenu-panel {
+    font-family: Montserrat;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 8pt;
+    padding: 15px;
+}
+.fedmenu-panel li {
+    list-style: none;
+    margin-left: -40px;
+}
+
+.fedmenu-panel a,
+.fedmenu-panel a:hover {
+    color: #3C6EB4;
+}
+
+.fedmenu-header {
+    display: inline;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #294172;
+    border-bottom: 1px solid;
+
 }
