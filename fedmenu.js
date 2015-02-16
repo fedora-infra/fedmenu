@@ -32,5 +32,4 @@ $(document).ready(function() {
         $('#fedmenu-button').addClass('fedmenu-active');
         $('#fedmenu-wrapper').removeClass('fedmenu-hidden');
     })
-    console.log('hi');
 });
