@@ -19,10 +19,14 @@
     -webkit-filter: drop-shadow(4px 4px 4px #222);
     filter:         drop-shadow(4px 4px 4px #222);
     z-index: 99;
+
+    // Awesome
+    transition-property: width, height, bottom, left, background-size, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
 }
 
 #fedmenu-button:hover, #fedmenu-button.fedmenu-active {
-    /*
     bottom: 7;
     left: 7;
 
@@ -31,12 +35,11 @@
     background-size: 86px 86px;
     background-image: url("img/logo.png");
     background-repeat: no-repeat;
-    */
 
     -webkit-filter: drop-shadow(4px 4px 6px #222);
     filter:         drop-shadow(4px 4px 6px #222);
-
 }
+
 #fedmenu-wrapper {
     position: fixed;
     height: 100%;
