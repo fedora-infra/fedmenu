@@ -65,6 +65,8 @@
     width: 70%;
     /* max-width: 890px; */
 
+    background: url('img/panda-wave.png') no-repeat right bottom;
+
     background-color: #FFF;
     margin-bottom: 20px;
     padding: 19px;
