@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('body').append('<link href="fedmenu.css" rel="stylesheet">');
     $('body').append('<div id="fedmenu-button"></div>');
-    $('body').append('<div id="fedmenu-wrapper" class="fedmenu-hidden fedmenu-radial-shadow"></div>');
+    $('body').append('<div id="fedmenu-wrapper" class="fedmenu-hidden fedmenu-radial-shadow"></div>')
 
 
     $('body').append('<div id="fedmenu-content"></div>');
@@ -10,7 +10,6 @@ $(document).ready(function() {
         url: 'https://apps.fedoraproject.org/js/data.js',
         dataType: 'script',
         success: function(script) {
-            eval(script);  // Safe?  We hardcode the url above and it's https.
             $.each(json.children, function(i, child) {
                 $("#fedmenu-content").append(
                     "<div class='fedmenu-header'>" + child.name + "</div><ul>");
@@ -23,13 +22,22 @@ $(document).ready(function() {
         },
     });
 
-
-    $("#fedmenu-wrapper").click(function() {
-        $('#fedmenu-button').removeClass('fedmenu-active');
-        $('#fedmenu-wrapper').addClass('fedmenu-hidden');
-    });
-    $("#fedmenu-button").click(function() {
-        $('#fedmenu-button').addClass('fedmenu-active');
+    var activate = function() {
         $('#fedmenu-wrapper').removeClass('fedmenu-hidden');
-    })
+        $('#fedmenu-button').addClass('fedmenu-active');
+        $('#fedmenu-content').addClass('fedmenu-active');
+    };
+
+    var deactivate = function() {
+        $('#fedmenu-wrapper').addClass('fedmenu-hidden');
+        $('#fedmenu-button').removeClass('fedmenu-active');
+        $('#fedmenu-content').removeClass('fedmenu-active');
+    };
+    $("#fedmenu-button").click(function() {
+        if ($(this).hasClass('fedmenu-active'))
+            deactivate();
+        else
+            activate();
+    });
+    $("#fedmenu-wrapper").click(deactivate);
 });

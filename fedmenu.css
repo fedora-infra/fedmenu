@@ -20,7 +20,7 @@
     filter:         drop-shadow(4px 4px 4px #222);
     z-index: 99;
 
-    // Awesome
+    /* Awesome */
     transition-property: width, height, bottom, left, background-size, filter;
     transition-duration: 0.15s;
     transition-timing-function: linear;
@@ -57,8 +57,9 @@
 
 #fedmenu-content {
     position: fixed;
-    width: 70%;
+    top: 100%;
     left: 15%;
+    width: 70%;
 
     background-color: #FFF;
     margin-bottom: 20px;
@@ -69,6 +70,14 @@
     -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.23);
             box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.23);
     z-index: 100;
+}
+
+#fedmenu-content.fedmenu-active {
+    top: 15%;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-delay: 0.3s;
+    transition-timing-function: ease-out;
 }
 
 #fedmenu-content > h1 {
