@@ -14,6 +14,7 @@
 }
 
 #fedmenu-button:hover, #fedmenu-button.fedmenu-active {
+    /*
     bottom: 7;
     left: 7;
 
@@ -22,9 +23,10 @@
     background-size: 86px 86px;
     background-image: url("img/logo.png");
     background-repeat: no-repeat;
+    */
 
-    -webkit-filter: drop-shadow(10px 10px 10px #222);
-    filter:         drop-shadow(10px 10px 10px #222);
+    -webkit-filter: drop-shadow(4px 4px 6px #222);
+    filter:         drop-shadow(4px 4px 6px #222);
 
 }
 #fedmenu-wrapper {
