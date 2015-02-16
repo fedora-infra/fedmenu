@@ -1,13 +1,34 @@
 #fedmenu-button {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: fixed;
+    bottom: 18;
+    left: 18;
 
-    -webkit-filter: drop-shadow(20px 20px 20px #222);
-    filter:         drop-shadow(20px 20px 20px #222);
+    width: 64px;
+    height: 64px;
+    background-size: 64px 64px;
+    background-image: url("img/logo.png");
+    background-repeat: no-repeat;
+
+    -webkit-filter: drop-shadow(4px 4px 4px #222);
+    filter:         drop-shadow(4px 4px 4px #222);
+}
+
+#fedmenu-button:hover, #fedmenu-button.fedmenu-active {
+    bottom: 7;
+    left: 7;
+
+    width: 86px;
+    height: 86px;
+    background-size: 86px 86px;
+    background-image: url("img/logo.png");
+    background-repeat: no-repeat;
+
+    -webkit-filter: drop-shadow(10px 10px 10px #222);
+    filter:         drop-shadow(10px 10px 10px #222);
+
 }
 #fedmenu-wrapper {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     top: 0;
