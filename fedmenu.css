@@ -7,12 +7,12 @@
 
 #fedmenu-button {
     position: fixed;
-    bottom: 18;
-    left: 18;
+    bottom: 10;
+    left: 10;
 
-    width: 64px;
-    height: 64px;
-    background-size: 64px 64px;
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
     background-image: url("img/logo.png");
     background-repeat: no-repeat;
 
@@ -27,12 +27,12 @@
 }
 
 #fedmenu-button:hover, #fedmenu-button.fedmenu-active {
-    bottom: 7;
-    left: 7;
+    bottom: 2;
+    left: 2;
 
-    width: 86px;
-    height: 86px;
-    background-size: 86px 86px;
+    width: 48px;
+    height: 48px;
+    background-size: 48px 48px;
     background-image: url("img/logo.png");
     background-repeat: no-repeat;
 
