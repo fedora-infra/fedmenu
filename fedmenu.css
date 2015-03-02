@@ -5,11 +5,27 @@
   src: local('Montserrat-Regular'), url(fonts/montserrat.ttf) format('truetype');
 }
 
-#fedmenu-button {
+.fedmenu-bottom-left {
     position: fixed;
     bottom: 10;
     left: 10;
+}
 
+.fedmenu-bottom-right {
+    position: fixed;
+    bottom: 10;
+    right: 10;
+}
+.fedmenu-bottom-left:hover .fedmenu-bottom-left.fedmenu-active {
+    bottom: 2;
+    left: 2;
+}
+.fedmenu-bottom-right:hover .fedmenu-bottom-right.fedmenu-active {
+    bottom: 2;
+    right 2;
+}
+
+#fedmenu-button {
     width: 32px;
     height: 32px;
     background-size: 32px 32px;
@@ -27,8 +43,6 @@
 }
 
 #fedmenu-button:hover, #fedmenu-button.fedmenu-active {
-    bottom: 2;
-    left: 2;
 
     width: 48px;
     height: 48px;

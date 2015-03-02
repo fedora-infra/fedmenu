@@ -1,8 +1,18 @@
-$(document).ready(function() {
-    $('body').append('<link href="fedmenu.css" rel="stylesheet">');
-    $('body').append('<div id="fedmenu-button"></div>');
-    $('body').append('<div id="fedmenu-wrapper"></div>');
+var fedmenu = function(options) { $(document).ready(function() {
+    var defaults = {
+        'position': 'bottom-left',
+        //'user': null,
+        //'package': null,
+    }
+    // Our options object is called 'o' for shorthand
+    var o = $.extend({}, defaults, options || {});
 
+    console.log(o);
+
+    $('body').append('<link href="fedmenu.css" rel="stylesheet">');
+    $('body').append('<div id="fedmenu-button" class="fedmenu-' + o.position + '"></div>');
+    $('body').append('<div id="fedmenu-wrapper"></div>');
+    console.log('oh hay');
 
     $('body').append('<div id="fedmenu-content"></div>');
     $('#fedmenu-content').append("<h1>Fedora Infrastructure</h1>");
@@ -38,4 +48,4 @@ $(document).ready(function() {
             activate();
     });
     $("#fedmenu-wrapper").click(deactivate);
-});
+}); };
