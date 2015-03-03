@@ -25,12 +25,12 @@
     right 2;
 }
 
-#fedmenu-main-button {
+.fedmenu-button {
+    background-repeat: no-repeat;
+
     width: 32px;
     height: 32px;
     background-size: 32px 32px;
-    background-image: url("img/logo.png");
-    background-repeat: no-repeat;
 
     -webkit-filter: drop-shadow(4px 4px 4px #222);
     filter:         drop-shadow(4px 4px 4px #222);
@@ -41,17 +41,21 @@
     transition-duration: 0.15s;
     transition-timing-function: linear;
 }
-
-#fedmenu-main-button:hover, #fedmenu-main-button.fedmenu-active {
-
+.fedmenu-button:hover, .fedmenu-button.fedmenu-active {
     width: 48px;
     height: 48px;
     background-size: 48px 48px;
-    background-image: url("img/logo.png");
-    background-repeat: no-repeat;
 
     -webkit-filter: drop-shadow(4px 4px 6px #222);
     filter:         drop-shadow(4px 4px 6px #222);
+}
+
+#fedmenu-main-button {
+    background-image: url("img/logo.png");
+}
+
+#fedmenu-user-button {
+    background-image: url("https://seccdn.libravatar.org/avatar/9c9f7784935381befc302fe3c814f9136e7a33953d0318761669b8643f4df55c?s=312&d=https%3A%2F%2Fbadges.fedoraproject.org%2Fstatic%2Fimg%2Fbadger_avatar.png");
 }
 
 #fedmenu-wrapper {

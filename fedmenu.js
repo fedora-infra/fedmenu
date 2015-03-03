@@ -12,9 +12,9 @@ var fedmenu = function(options) { $(document).ready(function() {
     var o = $.extend({}, defaults, options || {});
 
     var buttons = "";
-    if (o['user'] != null) buttons += '<div id="fedmenu-user-button"></div>';
-    if (o['package'] != null) buttons += '<div id="fedmenu-package-button"></div>';
-    buttons += '<div id="fedmenu-main-button"></div>';
+    if (o['user'] != null) buttons += '<div id="fedmenu-user-button" class="fedmenu-button"></div>';
+    if (o['package'] != null) buttons += '<div id="fedmenu-package-button" class="fedmenu-button"></div>';
+    buttons += '<div id="fedmenu-main-button" class="fedmenu-button"></div>';
 
     $('body').append('<link href="fedmenu.css" rel="stylesheet">');
     $('body').append(
