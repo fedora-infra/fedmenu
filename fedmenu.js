@@ -26,6 +26,9 @@ var fedmenu = function(options) { $(document).ready(function() {
         $('#fedmenu-user-button').css('background-image', 'url("' + imgurl + '")');
     }
     if (o['package'] != null) {
+        /* This icon is not always going to exist, so we should put in an
+         * apache rule that redirects to a default icon if this file
+         * isn't there. */
         var imgurl = 'https://apps.fedoraproject.org/packages/images/icons/' + o['package'] + '.png';
         $('#fedmenu-package-button').css('background-image', 'url("' + imgurl + '")');
     }
