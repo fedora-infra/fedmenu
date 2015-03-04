@@ -64,8 +64,11 @@
 }
 
 #fedmenu-user-button {
-    background-image: url("https://seccdn.libravatar.org/avatar/9c9f7784935381befc302fe3c814f9136e7a33953d0318761669b8643f4df55c?s=312&d=https%3A%2F%2Fbadges.fedoraproject.org%2Fstatic%2Fimg%2Fbadger_avatar.png");
+    /* background image is set via javascript */
     border-radius: 50%;  /* Make it a circle */
+}
+#fedmenu-package-button {
+    /* background image is set via javascript */
 }
 
 #fedmenu-wrapper {
