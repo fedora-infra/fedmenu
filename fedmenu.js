@@ -25,6 +25,10 @@ var fedmenu = function(options) { $(document).ready(function() {
         var imgurl = libravatar.url(o['user']);
         $('#fedmenu-user-button').css('background-image', 'url("' + imgurl + '")');
     }
+    if (o['package'] != null) {
+        var imgurl = 'https://apps.fedoraproject.org/packages/images/icons/' + o['package'] + '.png';
+        $('#fedmenu-package-button').css('background-image', 'url("' + imgurl + '")');
+    }
 
     $('body').append('<div id="fedmenu-wrapper"></div>');
 
