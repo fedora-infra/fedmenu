@@ -16,7 +16,29 @@
     </head>
     <body>
     <h1>Try clicking the button at the bottom of the page (the Fedora logo)</h1>
-    <p> this is some <a href="http://threebean.org">text</a> </p>
+
+    <h3>This is a little demo of a menu that we can add to all our apps.</h3>
+    <p>The javascript code to make this menu happen looks like this..</p>
+    <pre>
+        &lt;script src="http://code.jquery.com/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
+        &lt;script src="fedora-libravatar.js"&gt; &lt;/script&gt; &lt;!-- only needed for avatars --&gt;
+        &lt;script src="fedmenu.js"&gt; &lt;/script&gt;
+        &lt;script&gt;
+          fedmenu({
+              /* Optional.  Default is 'bottom-left' */
+              'position': 'bottom-right',
+
+              /* Optional.  Use this if the page is "about" a user.. like on
+                 their badges page.  Do not use it for a logged in user. */
+              'user': 'kevin',
+
+              /* Optional.  Use this if the page is "about" a package.. like
+                 on the pkgdb page for a package. */
+              'package': 'firefox',
+          });
+        &lt;/script&gt;
+    </pre>
+    <p> Below here there is just some text to fill out this demo page..</p>
 <p>Lorem ipsum dolor sit amet, ad debet constituto mel, delenit quaerendum in duo. Ea mea mazim disputationi. Populo dictas efficiendi has at, et vim copiosae scaevola persequeris. An mei putant iuvaret aliquando, in mel equidem indoctum erroribus. An est vero solum voluptatum. Id sit veritus consequat elaboraret, eirmod legimus eam et, ea vix delectus definitiones. Ad graeci ullamcorper vim, ea sed nominavi patrioque.</p>
 <p>Oblique disputationi est at, vivendum consequuntur ius cu. Suas vocent vivendum ut pri. Zril nonumy persequeris vix eu. Nihil scripta pri te, no eos sententiae reformidans, commune vituperata cum an. Nec ut feugiat platonem. Est paulo possit perpetua at, sit ea clita commune, duo ei placerat praesent dissentiunt.</p>
 <p>Has an consectetuer mediocritatem. Populo melius in sit. Accumsan tincidunt an sea, his illum sanctus adversarium eu, sea ea offendit convenire aliquando. Justo graeco an sea, te vis latine quaerendum.</p>
