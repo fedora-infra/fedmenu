@@ -35,8 +35,8 @@ var fedmenu = function(options) { $(document).ready(function() {
 
     $('body').append('<div id="fedmenu-wrapper"></div>');
 
-    $('body').append('<div id="fedmenu-content"></div>');
-    $('#fedmenu-content').append("<h1>Fedora Infrastructure</h1>");
+    $('body').append('<div id="fedmenu-main-content"></div>');
+    $('#fedmenu-main-content').append("<h1>Fedora Infrastructure</h1>");
     $.ajax({
         url: o.url,
         mimeType: o.mimeType,
@@ -58,12 +58,12 @@ var fedmenu = function(options) { $(document).ready(function() {
                         "</a></li>";
                 });
                 html = html + "</ul></div>";
-                $("#fedmenu-content").append(html);
+                $("#fedmenu-main-content").append(html);
             });
         },
     });
 
-    var main = '#fedmenu-wrapper,#fedmenu-main-button,#fedmenu-content';
+    var main = '#fedmenu-wrapper,#fedmenu-main-button,#fedmenu-main-content';
     var activate = function() { $(main).addClass('fedmenu-active'); };
     var deactivate = function() { $(main).removeClass('fedmenu-active'); };
 

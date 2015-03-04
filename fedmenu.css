@@ -91,7 +91,7 @@
 
 }
 
-#fedmenu-content {
+#fedmenu-main-content {
     position: fixed;
     top: 100%;
     left: 15%;
@@ -111,7 +111,7 @@
     z-index: 100;
 }
 
-#fedmenu-content.fedmenu-active {
+#fedmenu-main-content.fedmenu-active {
     top: 15%;
     transition-property: all;
     transition-duration: 0.4s;
@@ -119,7 +119,7 @@
     transition-timing-function: ease-out;
 }
 
-#fedmenu-content > h1 {
+#fedmenu-main-content > h1 {
     font-family: Montserrat;
     font-weight: bold;
     border-bottom: 2px solid;
