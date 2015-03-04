@@ -20,6 +20,12 @@ var fedmenu = function(options) { $(document).ready(function() {
     $('body').append(
         '<div id="fedmenu-tray" class="fedmenu-' + o.position + '">' +
         buttons + '</div>');
+
+    if (o['user'] != null) {
+        var imgurl = libravatar.url(o['user']);
+        $('#fedmenu-user-button').css('background-image', 'url("' + imgurl + '")');
+    }
+
     $('body').append('<div id="fedmenu-wrapper"></div>');
 
     $('body').append('<div id="fedmenu-content"></div>');
