@@ -143,4 +143,11 @@ var fedmenu = function(options) { $(document).ready(function() {
         deactivate('user');
         deactivate('package');
     });
+    $(document).keydown(function(event) {
+        if (event.key == 'Esc'){
+            deactivate('main');
+            deactivate('user');
+            deactivate('package');
+        }
+    });
 }); };
