@@ -12,9 +12,9 @@ var fedmenu = function(options) { $(document).ready(function() {
     var o = $.extend({}, defaults, options || {});
 
     var buttons = "";
-    if (o['user'] != null) buttons += '<div id="fedmenu-user-button" class="fedmenu-button"></div>';
-    if (o['package'] != null) buttons += '<div id="fedmenu-package-button" class="fedmenu-button"></div>';
-    buttons += '<div id="fedmenu-main-button" class="fedmenu-button"></div>';
+    if (o['user'] != null) buttons += '<div id="fedmenu-user-button" class="fedmenu-button"><div class="img"></div></div>';
+    if (o['package'] != null) buttons += '<div id="fedmenu-package-button" class="fedmenu-button"><div class="img"></div></div>';
+    buttons += '<div id="fedmenu-main-button" class="fedmenu-button"><div class="img"></div></div>';
 
     $('body').append('<link href="fedmenu.css" rel="stylesheet">');
     $('body').append(
@@ -28,7 +28,7 @@ var fedmenu = function(options) { $(document).ready(function() {
 
     if (o['user'] != null) {
         var imgurl = libravatar.url(o['user']);
-        $('#fedmenu-user-button').css('background-image', 'url("' + imgurl + '")');
+        $('#fedmenu-user-button .img').css('background-image', 'url("' + imgurl + '")');
         $('body').append('<div id="fedmenu-user-content" class="fedmenu-content"></div>');
         $('#fedmenu-user-content').append("<h1>View " + o['user'] + " in other apps</h1>");
     }
@@ -37,7 +37,7 @@ var fedmenu = function(options) { $(document).ready(function() {
          * apache rule that redirects to a default icon if this file
          * isn't there. */
         var imgurl = 'https://apps.fedoraproject.org/packages/images/icons/' + o['package'] + '.png';
-        $('#fedmenu-package-button').css('background-image', 'url("' + imgurl + '")');
+        $('#fedmenu-package-button .img').css('background-image', 'url("' + imgurl + '")');
         $('body').append('<div id="fedmenu-package-content" class="fedmenu-content"></div>');
         $('#fedmenu-package-content').append("<h1>View the " + o['package'] + " package in other apps</h1>");
     }

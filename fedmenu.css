@@ -30,48 +30,45 @@
 }
 
 .fedmenu-button {
-    background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 8px;
-    margin-bottom: 8px;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 8px;
 
     width: 32px;
     height: 32px;
-    background-size: 32px 32px;
 
     -webkit-filter: drop-shadow(4px 4px 4px #222);
     filter:         drop-shadow(4px 4px 4px #222);
     z-index: 99;
 
     /* Awesome */
-    transition-property: width, height, bottom, left, background-size, filter, margin-top, margin-bottom;
+    transition-property: width, height, bottom, left, background-size, filter, margin-top, margin-bottom, padding-bottom;
     transition-duration: 0.10s;
     transition-timing-function: linear;
 }
 .fedmenu-button:hover, .fedmenu-button.fedmenu-active {
-    width: 48px;
-    height: 48px;
-    background-size: 48px 48px;
-
     margin-top: -8px;
     margin-bottom: -8px;
+    padding-bottom: -8px;
+
+    width: 48px;
+    height: 48px;
 
     -webkit-filter: drop-shadow(4px 4px 6px #222);
     filter:         drop-shadow(4px 4px 6px #222);
 }
 
-#fedmenu-main-button {
-    background-image: url("img/logo.png");
+.fedmenu-button .img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
-
-#fedmenu-user-button {
-    /* background image is set via javascript */
-    border-radius: 50%;  /* Make it a circle */
-}
-#fedmenu-package-button {
-    /* background image is set via javascript */
-}
+#fedmenu-main-button .img { background-image: url("img/logo.png"); }
+#fedmenu-user-button .img { border-radius: 50%;  /* Make avatars into a circle */ }
 
 #fedmenu-wrapper {
     position: fixed;
