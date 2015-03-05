@@ -128,6 +128,8 @@ var fedmenu = function(options) { $(document).ready(function() {
         if ($(this).hasClass('fedmenu-active'))
             deactivate(t);
         else
+            // Deactivate any others that may be active before starting anew.
+            deactivate('main'); deactivate('user'); deactivate('package');
             activate(t);
     };};
     $("#fedmenu-main-button").click(click_factory('main'));

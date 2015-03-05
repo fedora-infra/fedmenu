@@ -27,6 +27,7 @@
 
 #fedmenu-tray {
     width: 48px;
+    z-index: 99;
 }
 
 .fedmenu-button {
@@ -42,7 +43,6 @@
 
     -webkit-filter: drop-shadow(4px 4px 4px #222);
     filter:         drop-shadow(4px 4px 4px #222);
-    z-index: 99;
 
     /* Awesome */
     transition-property: width, height, bottom, left, background-size, filter, margin-top, margin-bottom, padding-bottom;
