@@ -80,6 +80,44 @@
     display: none;
 }
 
+#fedmenu-wrapper.fedmenu-active,.fedmenu-exit {
+    cursor: pointer;
+}
+
+.fedmenu-exit {
+    float: right;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 38px;
+    font-family: sans-serif;
+    font-size: 26pt;
+    color: #FFF;
+    background-color: #db3279;
+    border-radius: 50%;
+
+    -webkit-filter: drop-shadow(4px 4px 4px #222);
+    filter:         drop-shadow(4px 4px 4px #222);
+
+    /* Awesome */
+    transition-property: width, height, margin, line-height, font-size;
+    transition-duration: 0.10s;
+    transition-timing-function: linear;
+}
+
+.fedmenu-exit:hover {
+    margin-top: -6px;
+    margin-right: -6px;
+
+    width: 48px;
+    height: 48px;
+    line-height: 50px;
+    font-size: 32pt;
+
+    -webkit-filter: drop-shadow(4px 4px 6px #222);
+    filter:         drop-shadow(4px 4px 6px #222);
+}
+
 #fedmenu-wrapper.fedmenu-active {
     display: block;
     background-color: rgba(0,0,0,0.3);
@@ -145,7 +183,6 @@
     font-size: 12pt;
     color: #294172;
     border-bottom: 1px solid;
-
 }
 
 /* Responsive stuff... */

@@ -24,12 +24,14 @@ var fedmenu = function(options) { $(document).ready(function() {
     $('body').append('<div id="fedmenu-wrapper"></div>');
 
     $('body').append('<div id="fedmenu-main-content" class="fedmenu-content"></div>');
+    $('#fedmenu-main-content').append("<span class='fedmenu-exit'>&#x274C;</span>");
     $('#fedmenu-main-content').append("<h1>Fedora Infrastructure Apps</h1>");
 
     if (o['user'] != null) {
         var imgurl = libravatar.url(o['user']);
         $('#fedmenu-user-button .img').css('background-image', 'url("' + imgurl + '")');
         $('body').append('<div id="fedmenu-user-content" class="fedmenu-content"></div>');
+        $('#fedmenu-user-content').append("<span class='fedmenu-exit'>&#x274C;</span>");
         $('#fedmenu-user-content').append("<h1>View " + o['user'] + " in other apps</h1>");
     }
     if (o['package'] != null) {
@@ -39,6 +41,7 @@ var fedmenu = function(options) { $(document).ready(function() {
         var imgurl = 'https://apps.fedoraproject.org/packages/images/icons/' + o['package'] + '.png';
         $('#fedmenu-package-button .img').css('background-image', 'url("' + imgurl + '")');
         $('body').append('<div id="fedmenu-package-content" class="fedmenu-content"></div>');
+        $('#fedmenu-package-content').append("<span class='fedmenu-exit'>&#x274C;</span>");
         $('#fedmenu-package-content').append("<h1>View the " + o['package'] + " package elsewhere</h1>");
     }
 
@@ -135,7 +138,7 @@ var fedmenu = function(options) { $(document).ready(function() {
     $("#fedmenu-main-button").click(click_factory('main'));
     $("#fedmenu-user-button").click(click_factory('user'));
     $("#fedmenu-package-button").click(click_factory('package'));
-    $("#fedmenu-wrapper").click(function() {
+    $("#fedmenu-wrapper,.fedmenu-exit").click(function() {
         deactivate('main');
         deactivate('user');
         deactivate('package');
