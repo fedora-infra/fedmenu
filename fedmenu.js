@@ -24,7 +24,7 @@ var fedmenu = function(options) { $(document).ready(function() {
     $('body').append('<div id="fedmenu-wrapper"></div>');
 
     $('body').append('<div id="fedmenu-main-content" class="fedmenu-content"></div>');
-    $('#fedmenu-main-content').append("<h1>Fedora Infrastructure</h1>");
+    $('#fedmenu-main-content').append("<h1>Fedora Infrastructure Apps</h1>");
 
     if (o['user'] != null) {
         var imgurl = libravatar.url(o['user']);
@@ -39,7 +39,7 @@ var fedmenu = function(options) { $(document).ready(function() {
         var imgurl = 'https://apps.fedoraproject.org/packages/images/icons/' + o['package'] + '.png';
         $('#fedmenu-package-button .img').css('background-image', 'url("' + imgurl + '")');
         $('body').append('<div id="fedmenu-package-content" class="fedmenu-content"></div>');
-        $('#fedmenu-package-content').append("<h1>View the " + o['package'] + " package in other apps</h1>");
+        $('#fedmenu-package-content').append("<h1>View the " + o['package'] + " package elsewhere</h1>");
     }
 
     // Define three functions used to generate the content of the menu panes
