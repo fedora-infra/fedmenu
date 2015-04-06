@@ -7,22 +7,22 @@
 
 .fedmenu-bottom-left {
     position: fixed;
-    bottom: 10;
-    left: 10;
+    bottom: 10px;
+    left: 10px;
 }
 
 .fedmenu-bottom-right {
     position: fixed;
-    bottom: 10;
-    right: 10;
+    bottom: 10px;
+    right: 10px;
 }
 .fedmenu-bottom-left:hover .fedmenu-bottom-left.fedmenu-active {
-    bottom: 2;
-    left: 2;
+    bottom: 2px;
+    left: 2px;
 }
 .fedmenu-bottom-right:hover .fedmenu-bottom-right.fedmenu-active {
-    bottom: 2;
-    right 2;
+    bottom: 2px;
+    right 2px;
 }
 
 #fedmenu-tray {
