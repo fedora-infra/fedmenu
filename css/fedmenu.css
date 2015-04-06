@@ -167,14 +167,18 @@
     font-size: 8pt;
     padding: 15px;
 }
+.fedmenu-panel ul {
+    margin-top: 10px;
+    padding-left: 0px;
+}
 .fedmenu-panel li {
     list-style: none;
-    margin-left: -40px;
 }
 
 .fedmenu-panel a,
 .fedmenu-panel a:hover {
     color: #3C6EB4;
+
 }
 
 .fedmenu-header {
