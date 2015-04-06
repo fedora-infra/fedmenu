@@ -2,7 +2,7 @@
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: local('Montserrat-Regular'), url(fonts/montserrat.ttf) format('truetype');
+  src: local('Montserrat-Regular'), url(../fonts/montserrat.ttf) format('truetype');
 }
 
 .fedmenu-bottom-left {
@@ -67,7 +67,7 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-#fedmenu-main-button .img { background-image: url("img/logo.png"); }
+#fedmenu-main-button .img { background-image: url("../img/logo.png"); }
 #fedmenu-user-button .img { border-radius: 50%;  /* Make avatars into a circle */ }
 
 #fedmenu-wrapper {
@@ -134,7 +134,7 @@
     left: 30%;
     width: 40%;
 
-    background: url('img/panda-wave.png') no-repeat right bottom;
+    background: url('../img/panda-wave.png') no-repeat right bottom;
 
     background-color: #FFF;
     margin-bottom: 20px;
