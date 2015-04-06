@@ -16,7 +16,7 @@ var fedmenu = function(options) { $(document).ready(function() {
     if (o['package'] != null) buttons += '<div id="fedmenu-package-button" class="fedmenu-button"><div class="img"></div></div>';
     buttons += '<div id="fedmenu-main-button" class="fedmenu-button"><div class="img"></div></div>';
 
-    $('body').append('<link href="fedmenu.css" rel="stylesheet">');
+    $('body').append('<link href="css/fedmenu.css" rel="stylesheet">');
     $('body').append(
         '<div id="fedmenu-tray" class="fedmenu-' + o.position + '">' +
         buttons + '</div>');
