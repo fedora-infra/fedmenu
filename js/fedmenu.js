@@ -16,7 +16,10 @@ var fedmenu = function(options) { $(document).ready(function() {
     if (o['package'] != null) buttons += '<div id="fedmenu-package-button" class="fedmenu-button"><div class="img"></div></div>';
     buttons += '<div id="fedmenu-main-button" class="fedmenu-button"><div class="img"></div></div>';
 
-    $('body').append('<link href="css/fedmenu.css" rel="stylesheet">');
+    var script = $("script[src$='fedmenu.js']").attr('src');
+    var base = script.slice(0, -13);
+
+    $('body').append('<link href="' + base + 'css/fedmenu.css" rel="stylesheet">');
     $('body').append(
         '<div id="fedmenu-tray" class="fedmenu-' + o.position + '">' +
         buttons + '</div>');
