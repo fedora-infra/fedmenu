@@ -158,6 +158,7 @@
     font-family: Montserrat;
     font-weight: bold;
     border-bottom: 2px solid;
+    color: #294172;
 }
 
 .fedmenu-panel {
@@ -178,7 +179,6 @@
 .fedmenu-panel a,
 .fedmenu-panel a:hover {
     color: #3C6EB4;
-
 }
 
 .fedmenu-header {
