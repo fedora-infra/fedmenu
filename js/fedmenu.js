@@ -7,13 +7,13 @@ var fedmenu = function(options) { $(document).ready(function() {
 
         'user': null,
         'package': null,
-    }
+    };
     // Our options object is called 'o' for shorthand
     var o = $.extend({}, defaults, options || {});
 
     var buttons = "";
-    if (o['user'] != null) buttons += '<div id="fedmenu-user-button" class="fedmenu-button"><div class="img"></div></div>';
-    if (o['package'] != null) buttons += '<div id="fedmenu-package-button" class="fedmenu-button"><div class="img"></div></div>';
+    if (o.user !== null) buttons += '<div id="fedmenu-user-button" class="fedmenu-button"><div class="img"></div></div>';
+    if (o.package !== null) buttons += '<div id="fedmenu-package-button" class="fedmenu-button"><div class="img"></div></div>';
     buttons += '<div id="fedmenu-main-button" class="fedmenu-button"><div class="img"></div></div>';
 
     var script = $("script[src$='fedmenu.js']").attr('src');
@@ -30,22 +30,23 @@ var fedmenu = function(options) { $(document).ready(function() {
     $('#fedmenu-main-content').append("<span class='fedmenu-exit'>&#x274C;</span>");
     $('#fedmenu-main-content').append("<h1>Fedora Infrastructure Apps</h1>");
 
-    if (o['user'] != null) {
-        var imgurl = libravatar.url(o['user']);
+    var imgurl;
+    if (o.user !== null) {
+        imgurl = libravatar.url(o.user);
         $('#fedmenu-user-button .img').css('background-image', 'url("' + imgurl + '")');
         $('body').append('<div id="fedmenu-user-content" class="fedmenu-content"></div>');
         $('#fedmenu-user-content').append("<span class='fedmenu-exit'>&#x274C;</span>");
-        $('#fedmenu-user-content').append("<h1>View " + o['user'] + " in other apps</h1>");
+        $('#fedmenu-user-content').append("<h1>View " + o.user + " in other apps</h1>");
     }
-    if (o['package'] != null) {
+    if (o.package !== null) {
         /* This icon is not always going to exist, so we should put in an
          * apache rule that redirects to a default icon if this file
          * isn't there. */
-        var imgurl = 'https://apps.fedoraproject.org/packages/images/icons/' + o['package'] + '.png';
+        imgurl = 'https://apps.fedoraproject.org/packages/images/icons/' + o.package + '.png';
         $('#fedmenu-package-button .img').css('background-image', 'url("' + imgurl + '")');
         $('body').append('<div id="fedmenu-package-content" class="fedmenu-content"></div>');
         $('#fedmenu-package-content').append("<span class='fedmenu-exit'>&#x274C;</span>");
-        $('#fedmenu-package-content').append("<h1>View the " + o['package'] + " package elsewhere</h1>");
+        $('#fedmenu-package-content').append("<h1>View the " + o.package + " package elsewhere</h1>");
     }
 
     // Define three functions used to generate the content of the menu panes
@@ -69,9 +70,9 @@ var fedmenu = function(options) { $(document).ready(function() {
 
         var found = false;
         $.each(node.children, function(j, leaf) {
-            if (leaf.data.user_url != undefined) {
+            if (leaf.data.user_url !== undefined) {
                 found = true;
-                var url = leaf.data.user_url.replace('{user}', o['user'])
+                var url = leaf.data.user_url.replace('{user}', o.user);
                 html = html +
                     "<li><a target='_blank' href='" + url + "'>" +
                     $("<p>" + leaf.name + "</p>").text() +
@@ -90,9 +91,9 @@ var fedmenu = function(options) { $(document).ready(function() {
 
         var found = false;
         $.each(node.children, function(j, leaf) {
-            if (leaf.data.package_url != undefined) {
+            if (leaf.data.package_url !== undefined) {
                 found = true;
-                var url = leaf.data.package_url.replace('{package}', o['package'])
+                var url = leaf.data.package_url.replace('{package}', o.package);
                 html = html +
                     "<li><a target='_blank' href='" + url + "'>" +
                     $("<p>" + leaf.name + "</p>").text() +
@@ -115,9 +116,9 @@ var fedmenu = function(options) { $(document).ready(function() {
         },
         success: function(script) {
             $.each(json.children, make_main_content_html);
-            if (o['user'] != null)
+            if (o.user !== null)
                 $.each(json.children, make_user_content_html);
-            if (o['package'] != null)
+            if (o.package !== null)
                 $.each(json.children, make_package_content_html);
         },
     });
