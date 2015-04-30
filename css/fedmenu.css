@@ -35,8 +35,8 @@
     margin-right: auto;
 
     margin-top: 0px;
-    margin-bottom: 0px;
-    padding-bottom: 8px;
+    margin-bottom: 8px;
+    padding-bottom: 0px;
 
     width: 32px;
     height: 32px;
@@ -51,7 +51,7 @@
 }
 .fedmenu-button:hover, .fedmenu-button.fedmenu-active {
     margin-top: -8px;
-    margin-bottom: -8px;
+    margin-bottom: 0px;
     padding-bottom: -8px;
 
     width: 48px;
