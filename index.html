@@ -1,9 +1,10 @@
 <html>
     <head>
-    <link rel="stylesheet" href="https://apps.fedoraproject.org/datagrepper/static/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="https://apps.fedoraproject.org/datagrepper/static/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/demo.css" />
         <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="js/fedora-libravatar.js"> </script>
-        <script src="js/fedmenu.js"> </script>
+        <script src="js/fedora-libravatar.js"></script>
+        <script src="js/fedmenu.js"></script>
         <script>
           fedmenu({
               'url': 'dev-data.js',
@@ -16,45 +17,57 @@
         </script>
     </head>
     <body>
-    <h1>Try clicking the button at the bottom of the page (the Fedora logo)</h1>
+        <div class="container">
+            <div class="fm-intro">
+                <h1>fedmenu</h1>
+                <a href="//github.com/fedora-infra/fedmenu" class="btn btn-primary">
+                    source
+                </a>
+                <a href="//github.com/fedora-infra/fedmenu/issues" class="btn btn-warning">
+                    issue tracker
+                </a>
+            </div>
 
-    <h3>This is a little demo of a menu that we can add to all our apps.</h3>
-    <p>The javascript code to make this menu happen looks like this..</p>
-    <pre style="white-space: pre-wrap;">
-&lt;script src="http://code.jquery.com/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
-&lt;script src="fedora-libravatar.js"&gt; &lt;/script&gt; &lt;!-- only needed for avatars --&gt;
-&lt;script src="fedmenu.js"&gt; &lt;/script&gt;
-&lt;script&gt;
- fedmenu({
-   /* Optional. Default is 'bottom-left' */
-   'position': 'bottom-right',
+            <h2>Try clicking the button at the bottom of the page (the Fedora logo)</h2>
 
-   /* Optional. Use this if the page is "about" a user.. like on
-     their badges page. Do not use it for a logged in user. */
-   'user': 'kevin',
+            <h3>This is a little demo of a menu that we can add to all our apps.</h3>
+            <p>The javascript code to make this menu happen looks like this..</p>
+            <pre style="white-space: pre-wrap;">
+    &lt;script src="http://code.jquery.com/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
+    &lt;script src="fedora-libravatar.js"&gt; &lt;/script&gt; &lt;!-- only needed for avatars --&gt;
+    &lt;script src="fedmenu.js"&gt; &lt;/script&gt;
+    &lt;script&gt;
+     fedmenu({
+       /* Optional. Default is 'bottom-left' */
+       'position': 'bottom-right',
 
-   /* Optional. Use this if the page is "about" a package.. like
-     on the pkgdb page for a package. */
-   'package': 'firefox',
- });
-&lt;/script&gt;
-    </pre>
-    <p> Below here there is just some text to fill out this demo page..</p>
-<p>Lorem ipsum dolor sit amet, ad debet constituto mel, delenit quaerendum in duo. Ea mea mazim disputationi. Populo dictas efficiendi has at, et vim copiosae scaevola persequeris. An mei putant iuvaret aliquando, in mel equidem indoctum erroribus. An est vero solum voluptatum. Id sit veritus consequat elaboraret, eirmod legimus eam et, ea vix delectus definitiones. Ad graeci ullamcorper vim, ea sed nominavi patrioque.</p>
-<p>Oblique disputationi est at, vivendum consequuntur ius cu. Suas vocent vivendum ut pri. Zril nonumy persequeris vix eu. Nihil scripta pri te, no eos sententiae reformidans, commune vituperata cum an. Nec ut feugiat platonem. Est paulo possit perpetua at, sit ea clita commune, duo ei placerat praesent dissentiunt.</p>
-<p>Has an consectetuer mediocritatem. Populo melius in sit. Accumsan tincidunt an sea, his illum sanctus adversarium eu, sea ea offendit convenire aliquando. Justo graeco an sea, te vis latine quaerendum.</p>
-<p>Ex mea prompta theophrastus intellegebat. Id qui legendos repudiare. Quo et quem congue pertinax, eam an dignissim quaerendum. Sed tincidunt assueverit ex, an admodum voluptua eos, cu sea fierent appareat.</p>
-<p>Et his dico populo. Ad harum nemore nec, quo ad laoreet aliquando. In eum melius ocurreret disputando, sit ne utroque adipisci, hendrerit quaerendum at mei. Sed partem consulatu in, rationibus assueverit interesset nam ut.</p>
-<p>Definitiones signiferumque ea vim, indoctum torquatos cum an. Primis percipitur mea ad, vis ei eruditi definitiones. Ne his stet quando, at dolore dolores per, est id novum salutandi scripserit. Vide tacimates disputationi has in. Nec malis altera constituto in, ut aperiam utroque assentior sed.</p>
-<p>Vim cu cibo atqui paulo, nec eius diceret moderatius ut, has id odio eros accommodare. Possim placerat delicata cum eu. Cu duo solet animal ceteros, cu usu euismod aliquam imperdiet, nostro inermis gloriatur has te. Cu mazim disputationi usu, cu apeirian expetenda eos, aperiam salutandi id mel. Nam ad quidam splendide, nec ut lorem molestiae. Alia vero ex vix, audiam imperdiet per in, eu cum nullam causae.</p>
-<p>Melius rationibus mediocritatem te vim. Mea ne dicunt causae inermis, sit commune dissentias ad, cu pro persequeris voluptatibus. Sit aperiri splendide vulputate cu, qui nobis singulis pertinax ex, pro id dicit deseruisse. Tempor prompta consetetur nec ex, mel ut malis omnesque offendit.</p>
-<p>Eam ex accusam persecuti, vide natum duo an. Ei duo iusto appellantur. Brute perfecto sed ut. Cum ex brute definiebas, iriure option quaestio eos te. Sumo persius cu his, eu aperiam denique sea.</p>
-<p>Ei mei vidisse ornatus epicuri, nec epicurei repudiare ne. Usu et inani fierent antiopam. Ad usu appetere persecuti eloquentiam, est ponderum postulant consequuntur ad. Quando semper mel ne, fastidii disputando sit in, his vide putent ceteros eu.</p>
-<p>Esse vituperata ad usu. Tantas omittantur at quo. Quo eu velit quaestio rationibus. Vel dicat alterum prodesset at, ei vis nusquam insolens, te inciderint comprehensam vim. Purto quando facete id duo, alii dicit epicurei nec te, vix ancillae epicurei volutpat te.</p>
-<p>Te pri ceteros probatus, ad scripta scriptorem vituperatoribus eos. Quo honestatis consequuntur ne, nostrud convenire sapientem eu duo. Animal urbanitas at sit. Pri ex partem ceteros pertinax, mazim tation exerci an has, ne pri eirmod abhorreant moderatius. Sea te errem appareat accusamus, elitr repudiare an eos, ne eum meis voluptatum consectetuer. Vel debitis definitiones ne. Labitur docendi quo cu.</p>
-<p>Congue laboramus cu qui. Eam odio omittam at, vel ei dicam ridens placerat, phaedrum vituperatoribus eu ius. Essent quodsi inciderint sea ea. Nec ex dicam splendide, duo erant commune eu. Sit id nihil sapientem suavitate. Legendos quaerendum cu usu.</p>
-<p>Nibh volutpat inciderint mei id. Ius ei tibique convenire, prompta ullamcorper voluptatibus has eu, pertinacia inciderint ne per. Illum exerci euismod eos ut, ne malorum tincidunt sea. Ullum assentior pri no. Te eam fabellas dissentiet. Ut pro option moderatius.</p>
-<p>Graeci accumsan vix ut, ex mea iusto nihil, ex case habemus usu. Mazim quando cu vim. Te atqui nusquam est. Alii appetere has ne, id nominavi oportere tractatos eam, quot doctus labitur no sit. Mei reque viderer facilisis an. Sed iusto ludus te.</p>
-<p>At periculis ocurreret per. Ne convenire argumentum quo. Consul diceret argumentum in nam, autem exerci definitionem eu has. Vel omnis viderer feugait te, idque commune nam ut, id cum error evertitur. Eum illum minim primis ex.</p>
+       /* Optional. Use this if the page is "about" a user.. like on
+         their badges page. Do not use it for a logged in user. */
+       'user': 'kevin',
+
+       /* Optional. Use this if the page is "about" a package.. like
+         on the pkgdb page for a package. */
+       'package': 'firefox',
+     });
+    &lt;/script&gt;
+            </pre>
+            <p> Below here there is just some text to fill out this demo page..</p>
+            <p>Lorem ipsum dolor sit amet, ad debet constituto mel, delenit quaerendum in duo. Ea mea mazim disputationi. Populo dictas efficiendi has at, et vim copiosae scaevola persequeris. An mei putant iuvaret aliquando, in mel equidem indoctum erroribus. An est vero solum voluptatum. Id sit veritus consequat elaboraret, eirmod legimus eam et, ea vix delectus definitiones. Ad graeci ullamcorper vim, ea sed nominavi patrioque.</p>
+            <p>Oblique disputationi est at, vivendum consequuntur ius cu. Suas vocent vivendum ut pri. Zril nonumy persequeris vix eu. Nihil scripta pri te, no eos sententiae reformidans, commune vituperata cum an. Nec ut feugiat platonem. Est paulo possit perpetua at, sit ea clita commune, duo ei placerat praesent dissentiunt.</p>
+            <p>Has an consectetuer mediocritatem. Populo melius in sit. Accumsan tincidunt an sea, his illum sanctus adversarium eu, sea ea offendit convenire aliquando. Justo graeco an sea, te vis latine quaerendum.</p>
+            <p>Ex mea prompta theophrastus intellegebat. Id qui legendos repudiare. Quo et quem congue pertinax, eam an dignissim quaerendum. Sed tincidunt assueverit ex, an admodum voluptua eos, cu sea fierent appareat.</p>
+            <p>Et his dico populo. Ad harum nemore nec, quo ad laoreet aliquando. In eum melius ocurreret disputando, sit ne utroque adipisci, hendrerit quaerendum at mei. Sed partem consulatu in, rationibus assueverit interesset nam ut.</p>
+            <p>Definitiones signiferumque ea vim, indoctum torquatos cum an. Primis percipitur mea ad, vis ei eruditi definitiones. Ne his stet quando, at dolore dolores per, est id novum salutandi scripserit. Vide tacimates disputationi has in. Nec malis altera constituto in, ut aperiam utroque assentior sed.</p>
+            <p>Vim cu cibo atqui paulo, nec eius diceret moderatius ut, has id odio eros accommodare. Possim placerat delicata cum eu. Cu duo solet animal ceteros, cu usu euismod aliquam imperdiet, nostro inermis gloriatur has te. Cu mazim disputationi usu, cu apeirian expetenda eos, aperiam salutandi id mel. Nam ad quidam splendide, nec ut lorem molestiae. Alia vero ex vix, audiam imperdiet per in, eu cum nullam causae.</p>
+            <p>Melius rationibus mediocritatem te vim. Mea ne dicunt causae inermis, sit commune dissentias ad, cu pro persequeris voluptatibus. Sit aperiri splendide vulputate cu, qui nobis singulis pertinax ex, pro id dicit deseruisse. Tempor prompta consetetur nec ex, mel ut malis omnesque offendit.</p>
+            <p>Eam ex accusam persecuti, vide natum duo an. Ei duo iusto appellantur. Brute perfecto sed ut. Cum ex brute definiebas, iriure option quaestio eos te. Sumo persius cu his, eu aperiam denique sea.</p>
+            <p>Ei mei vidisse ornatus epicuri, nec epicurei repudiare ne. Usu et inani fierent antiopam. Ad usu appetere persecuti eloquentiam, est ponderum postulant consequuntur ad. Quando semper mel ne, fastidii disputando sit in, his vide putent ceteros eu.</p>
+            <p>Esse vituperata ad usu. Tantas omittantur at quo. Quo eu velit quaestio rationibus. Vel dicat alterum prodesset at, ei vis nusquam insolens, te inciderint comprehensam vim. Purto quando facete id duo, alii dicit epicurei nec te, vix ancillae epicurei volutpat te.</p>
+            <p>Te pri ceteros probatus, ad scripta scriptorem vituperatoribus eos. Quo honestatis consequuntur ne, nostrud convenire sapientem eu duo. Animal urbanitas at sit. Pri ex partem ceteros pertinax, mazim tation exerci an has, ne pri eirmod abhorreant moderatius. Sea te errem appareat accusamus, elitr repudiare an eos, ne eum meis voluptatum consectetuer. Vel debitis definitiones ne. Labitur docendi quo cu.</p>
+            <p>Congue laboramus cu qui. Eam odio omittam at, vel ei dicam ridens placerat, phaedrum vituperatoribus eu ius. Essent quodsi inciderint sea ea. Nec ex dicam splendide, duo erant commune eu. Sit id nihil sapientem suavitate. Legendos quaerendum cu usu.</p>
+            <p>Nibh volutpat inciderint mei id. Ius ei tibique convenire, prompta ullamcorper voluptatibus has eu, pertinacia inciderint ne per. Illum exerci euismod eos ut, ne malorum tincidunt sea. Ullum assentior pri no. Te eam fabellas dissentiet. Ut pro option moderatius.</p>
+            <p>Graeci accumsan vix ut, ex mea iusto nihil, ex case habemus usu. Mazim quando cu vim. Te atqui nusquam est. Alii appetere has ne, id nominavi oportere tractatos eam, quot doctus labitur no sit. Mei reque viderer facilisis an. Sed iusto ludus te.</p>
+            <p>At periculis ocurreret per. Ne convenire argumentum quo. Consul diceret argumentum in nam, autem exerci definitionem eu has. Vel omnis viderer feugait te, idque commune nam ut, id cum error evertitur. Eum illum minim primis ex.</p>
+    </div>
     </body>
 </html>
