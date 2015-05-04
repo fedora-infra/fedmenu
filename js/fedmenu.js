@@ -110,6 +110,7 @@ var fedmenu = function(options) { $(document).ready(function() {
         url: o.url,
         mimeType: o.mimeType,
         dataType: 'script',
+        cache: true,
         error: function(err) {
             console.log('Error getting ' + o.url);
             console.log(err);
