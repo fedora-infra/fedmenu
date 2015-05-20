@@ -3,13 +3,19 @@ var fedmenu = function(options) { $(document).ready(function() {
         'url': 'https://apps.fedoraproject.org/js/data.js',
         'mimeType': undefined,  // Only needed for local development
 
+        'context': document,  // Alternatively, parent.document for iframes.
+
         'position': 'bottom-left',
 
         'user': null,
         'package': null,
     };
+
     // Our options object is called 'o' for shorthand
     var o = $.extend({}, defaults, options || {});
+
+    // Also, hang on to the selector context with a shorthand 'c'
+    var c = o['context'];
 
     var buttons = "";
     if (o.user !== null) buttons += '<div id="fedmenu-user-button" class="fedmenu-button"><div class="img"></div></div>';
@@ -19,34 +25,34 @@ var fedmenu = function(options) { $(document).ready(function() {
     var script = $("script[src$='fedmenu.js']").attr('src');
     var base = script.slice(0, -13);
 
-    $('body').append('<link href="' + base + 'css/fedmenu.css" rel="stylesheet">');
-    $('body').append(
+    $('body', c).append('<link href="' + base + 'css/fedmenu.css" rel="stylesheet">');
+    $('body', c).append(
         '<div id="fedmenu-tray" class="fedmenu-' + o.position + '">' +
         buttons + '</div>');
 
-    $('body').append('<div id="fedmenu-wrapper"></div>');
+    $('body', c).append('<div id="fedmenu-wrapper"></div>');
 
-    $('body').append('<div id="fedmenu-main-content" class="fedmenu-content"></div>');
-    $('#fedmenu-main-content').append("<span class='fedmenu-exit'>&#x274C;</span>");
-    $('#fedmenu-main-content').append("<h1>Fedora Infrastructure Apps</h1>");
+    $('body', c).append('<div id="fedmenu-main-content" class="fedmenu-content"></div>');
+    $('#fedmenu-main-content', c).append("<span class='fedmenu-exit'>&#x274C;</span>");
+    $('#fedmenu-main-content', c).append("<h1>Fedora Infrastructure Apps</h1>");
 
     var imgurl;
     if (o.user !== null) {
         imgurl = libravatar.url(o.user);
-        $('#fedmenu-user-button .img').css('background-image', 'url("' + imgurl + '")');
-        $('body').append('<div id="fedmenu-user-content" class="fedmenu-content"></div>');
-        $('#fedmenu-user-content').append("<span class='fedmenu-exit'>&#x274C;</span>");
-        $('#fedmenu-user-content').append("<h1>View " + o.user + " in other apps</h1>");
+        $('#fedmenu-user-button .img', c).css('background-image', 'url("' + imgurl + '")');
+        $('body', c).append('<div id="fedmenu-user-content" class="fedmenu-content"></div>');
+        $('#fedmenu-user-content', c).append("<span class='fedmenu-exit'>&#x274C;</span>");
+        $('#fedmenu-user-content', c).append("<h1>View " + o.user + " in other apps</h1>");
     }
     if (o.package !== null) {
         /* This icon is not always going to exist, so we should put in an
          * apache rule that redirects to a default icon if this file
          * isn't there. */
         imgurl = 'https://apps.fedoraproject.org/packages/images/icons/' + o.package + '.png';
-        $('#fedmenu-package-button .img').css('background-image', 'url("' + imgurl + '")');
-        $('body').append('<div id="fedmenu-package-content" class="fedmenu-content"></div>');
-        $('#fedmenu-package-content').append("<span class='fedmenu-exit'>&#x274C;</span>");
-        $('#fedmenu-package-content').append("<h1>View the " + o.package + " package elsewhere</h1>");
+        $('#fedmenu-package-button .img', c).css('background-image', 'url("' + imgurl + '")');
+        $('body', c).append('<div id="fedmenu-package-content" class="fedmenu-content"></div>');
+        $('#fedmenu-package-content', c).append("<span class='fedmenu-exit'>&#x274C;</span>");
+        $('#fedmenu-package-content', c).append("<h1>View the " + o.package + " package elsewhere</h1>");
     }
 
     // Define three functions used to generate the content of the menu panes
@@ -61,7 +67,7 @@ var fedmenu = function(options) { $(document).ready(function() {
                 "</a></li>";
         });
         html = html + "</ul></div>";
-        $("#fedmenu-main-content").append(html);
+        $("#fedmenu-main-content", c).append(html);
     };
 
     var make_user_content_html = function(i, node) {
@@ -81,7 +87,7 @@ var fedmenu = function(options) { $(document).ready(function() {
         });
         if (found) {
             html = html + "</ul></div>";
-            $("#fedmenu-user-content").append(html);
+            $("#fedmenu-user-content", c).append(html);
         }
     };
 
@@ -102,7 +108,7 @@ var fedmenu = function(options) { $(document).ready(function() {
         });
         if (found) {
             html = html + "</ul></div>";
-            $("#fedmenu-package-content").append(html);
+            $("#fedmenu-package-content", c).append(html);
         }
     };
 
@@ -129,21 +135,22 @@ var fedmenu = function(options) { $(document).ready(function() {
             "#fedmenu-" + t + "-button," +
             "#fedmenu-" + t + "-content";
     };
-    var activate = function(t) { $(selector(t)).addClass('fedmenu-active'); };
-    var deactivate = function(t) { $(selector(t)).removeClass('fedmenu-active'); };
+    var activate = function(t) { $(selector(t), c).addClass('fedmenu-active'); };
+    var deactivate = function(t) { $(selector(t), c).removeClass('fedmenu-active'); };
 
     var click_factory = function(t) { return function() {
-        if ($(this).hasClass('fedmenu-active'))
+        if ($(this).hasClass('fedmenu-active')) {
             deactivate(t);
-        else
+        } else {
             // Deactivate any others that may be active before starting anew.
             deactivate('main'); deactivate('user'); deactivate('package');
             activate(t);
+        }
     };};
-    $("#fedmenu-main-button").click(click_factory('main'));
-    $("#fedmenu-user-button").click(click_factory('user'));
-    $("#fedmenu-package-button").click(click_factory('package'));
-    $("#fedmenu-wrapper,.fedmenu-exit").click(function() {
+    $("#fedmenu-main-button", c).click(click_factory('main'));
+    $("#fedmenu-user-button", c).click(click_factory('user'));
+    $("#fedmenu-package-button", c).click(click_factory('package'));
+    $("#fedmenu-wrapper,.fedmenu-exit", c).click(function() {
         deactivate('main');
         deactivate('user');
         deactivate('package');
