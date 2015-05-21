@@ -355,7 +355,7 @@ var json = {
         {
           "data": {
             "url": "http://admin.fedoraproject.org/accounts", 
-            "user_url": "https://admin.fedoraproject.org/accounts/view/{user}", 
+            "user_url": "https://admin.fedoraproject.org/accounts/user/view/{user}",
             "description": "The Fedora Account System.  Update your profile information and apply for membership in groups.\n", 
             "status_mappings": [
               "fas"
