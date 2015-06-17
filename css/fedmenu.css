@@ -22,7 +22,7 @@
 }
 .fedmenu-bottom-right:hover .fedmenu-bottom-right.fedmenu-active {
     bottom: 2px;
-    right 2px;
+    right: 2px;
 }
 
 #fedmenu-tray {
