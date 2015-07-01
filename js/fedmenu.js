@@ -183,6 +183,7 @@ var fedmenu = function(options) { $(document).ready(function() {
 
     var activate = function(t) {
         $.each(master_data, content_makers[t]);
+        $(".fedmenu-exit", c).click(function() {deactivate(t);});
         add_footer_links();
         $(selector(t), c).addClass('fedmenu-active');
     };
@@ -209,7 +210,7 @@ var fedmenu = function(options) { $(document).ready(function() {
         deactivate('package');
     });
     $(document).keydown(function(event) {
-        if (event.key == 'Esc'){
+        if (event.key == 'Escape' || event.key == 'Esc'){
             deactivate('main');
             deactivate('user');
             deactivate('package');
