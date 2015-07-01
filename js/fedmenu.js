@@ -133,8 +133,7 @@ var fedmenu = function(options) { $(document).ready(function() {
     // data we have on it from the json we loaded.
     var get_current_site = function() {
         var found = null;
-        //var ours = window.location.toString();
-        var ours = 'https://koschei.fedoraproject.org/';
+        var ours = window.location.toString();
         ours = ours.slice(ours.indexOf('://') + 3)
         $.each(master_data, function(i, node) {
             $.each(node.children, function(j, leaf) {
