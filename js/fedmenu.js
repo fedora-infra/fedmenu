@@ -25,7 +25,11 @@ var fedmenu = function(options) { $(document).ready(function() {
     var script = $("script[src$='fedmenu.js']").attr('src');
     var base = script.slice(0, -13);
 
-    $('body', c).append('<link href="' + base + 'css/fedmenu.css" rel="stylesheet">');
+    // Add a <head> section if one doesn't exist.
+    // https://github.com/fedora-infra/fedmenu/issues/6
+    if ($('head', c).length == 0) $('html', c).append('<head></head>');
+    $('head', c).append('<link href="' + base + 'css/fedmenu.css" rel="stylesheet">');
+
     $('body', c).append(
         '<div id="fedmenu-tray" class="fedmenu-' + o.position + '">' +
         buttons + '</div>');
