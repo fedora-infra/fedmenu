@@ -125,6 +125,37 @@ var fedmenu = function(options) { $(document).ready(function() {
         'package': make_package_content_html,
     };
 
+    // Figure out the current site that we're on, if possible, and return the
+    // data we have on it from the json we loaded.
+    var get_current_site = function() {
+        var found = null;
+        //var ours = window.location.toString();
+        var ours = 'https://koschei.fedoraproject.org/';
+        ours = ours.slice(ours.indexOf('://') + 3)
+        $.each(master_data, function(i, node) {
+            $.each(node.children, function(j, leaf) {
+                var theirs = leaf.data.url;
+                theirs = theirs.slice(theirs.indexOf('://') + 3)
+                if (theirs.indexOf(ours) === 0) found = leaf;
+            })
+        });
+        return found;
+    }
+
+    // Try to construct a little footer for the menus.
+    var add_footer_links = function() {
+        var site = get_current_site();
+        var content = "";
+        if (site != null && site.data.bugs_url != undefined && site.data.source_url != undefined) {
+            content = content + "Problems with " + site.name +
+                "?  Please <a href='" + site.data.bugs_url +
+                "'>file bugs</a> or check out <a href='" +
+                site.data.source_url + "'>the source</a>.";
+        }
+        content = content + "<br/>Powered by <a href='https://github.com/fedora-infra/fedmenu'>fedmenu</a>.";
+        $(".fedmenu-content").append("<div><p>" + content + "</p></div>");
+    }
+
     $.ajax({
         url: o.url,
         mimeType: o.mimeType,
@@ -148,6 +179,7 @@ var fedmenu = function(options) { $(document).ready(function() {
 
     var activate = function(t) {
         $.each(master_data, content_makers[t]);
+        add_footer_links();
         $(selector(t), c).addClass('fedmenu-active');
     };
     var deactivate = function(t) {
