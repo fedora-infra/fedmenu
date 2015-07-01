@@ -184,7 +184,7 @@ var fedmenu = function(options) { $(document).ready(function() {
         $.each(master_data, content_makers[t]);
         $(".fedmenu-exit", c).click(function() {deactivate(t);});
         add_footer_links();
-        $(selector(t), c).addClass('fedmenu-active');
+        setTimeout(function() {$(selector(t), c).addClass('fedmenu-active');}, 50);
     };
     var deactivate = function(t) {
         $(selector(t), c).removeClass('fedmenu-active');
