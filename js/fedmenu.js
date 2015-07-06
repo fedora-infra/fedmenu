@@ -129,16 +129,18 @@ var fedmenu = function(options) { $(document).ready(function() {
         'package': make_package_content_html,
     };
 
+    var normalize = function(url) {
+        return url.slice(url.indexOf('://') + 3).replace(/\/$/, "");
+    }
+
     // Figure out the current site that we're on, if possible, and return the
     // data we have on it from the json we loaded.
     var get_current_site = function() {
         var found = null;
-        var ours = window.location.toString();
-        ours = ours.slice(ours.indexOf('://') + 3)
+        var ours = normalize(window.location.toString());
         $.each(master_data, function(i, node) {
             $.each(node.children, function(j, leaf) {
-                var theirs = leaf.data.url;
-                theirs = theirs.slice(theirs.indexOf('://') + 3)
+                var theirs = normalize(leaf.data.url);
                 if (theirs.indexOf(ours) === 0) found = leaf;
             })
         });
