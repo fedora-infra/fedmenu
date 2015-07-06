@@ -141,7 +141,7 @@ var fedmenu = function(options) { $(document).ready(function() {
         $.each(master_data, function(i, node) {
             $.each(node.children, function(j, leaf) {
                 var theirs = normalize(leaf.data.url);
-                if (theirs.indexOf(ours) === 0) found = leaf;
+                if (ours.indexOf(theirs) === 0) found = leaf;
             })
         });
         return found;
