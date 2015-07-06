@@ -25,7 +25,11 @@ var fedmenu = function(options) { $(document).ready(function() {
     var script = $("script[src$='fedmenu.js']").attr('src');
     var base = script.slice(0, -13);
 
-    $('body', c).append('<link href="' + base + 'css/fedmenu.css" rel="stylesheet">');
+    // Add a <head> section if one doesn't exist.
+    // https://github.com/fedora-infra/fedmenu/issues/6
+    if ($('head', c).length == 0) $('html', c).append('<head></head>');
+    $('head', c).append('<link href="' + base + 'css/fedmenu.css" rel="stylesheet">');
+
     $('body', c).append(
         '<div id="fedmenu-tray" class="fedmenu-' + o.position + '">' +
         buttons + '</div>');
@@ -125,6 +129,36 @@ var fedmenu = function(options) { $(document).ready(function() {
         'package': make_package_content_html,
     };
 
+    // Figure out the current site that we're on, if possible, and return the
+    // data we have on it from the json we loaded.
+    var get_current_site = function() {
+        var found = null;
+        var ours = window.location.toString();
+        ours = ours.slice(ours.indexOf('://') + 3)
+        $.each(master_data, function(i, node) {
+            $.each(node.children, function(j, leaf) {
+                var theirs = leaf.data.url;
+                theirs = theirs.slice(theirs.indexOf('://') + 3)
+                if (theirs.indexOf(ours) === 0) found = leaf;
+            })
+        });
+        return found;
+    }
+
+    // Try to construct a little footer for the menus.
+    var add_footer_links = function() {
+        var site = get_current_site();
+        var content = "";
+        if (site != null && site.data.bugs_url != undefined && site.data.source_url != undefined) {
+            content = content + "Problems with " + site.name +
+                "?  Please <a href='" + site.data.bugs_url +
+                "'>file bugs</a> or check out <a href='" +
+                site.data.source_url + "'>the source</a>.";
+        }
+        content = content + "<br/>Powered by <a href='https://github.com/fedora-infra/fedmenu'>fedmenu</a>.";
+        $(".fedmenu-content").append("<div><p>" + content + "</p></div>");
+    }
+
     $.ajax({
         url: o.url,
         mimeType: o.mimeType,
@@ -148,7 +182,9 @@ var fedmenu = function(options) { $(document).ready(function() {
 
     var activate = function(t) {
         $.each(master_data, content_makers[t]);
-        $(selector(t), c).addClass('fedmenu-active');
+        $(".fedmenu-exit", c).click(function() {deactivate(t);});
+        add_footer_links();
+        setTimeout(function() {$(selector(t), c).addClass('fedmenu-active');}, 50);
     };
     var deactivate = function(t) {
         $(selector(t), c).removeClass('fedmenu-active');
@@ -173,7 +209,7 @@ var fedmenu = function(options) { $(document).ready(function() {
         deactivate('package');
     });
     $(document).keydown(function(event) {
-        if (event.key == 'Esc'){
+        if (event.key == 'Escape' || event.key == 'Esc'){
             deactivate('main');
             deactivate('user');
             deactivate('package');
