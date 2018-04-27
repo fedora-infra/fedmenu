@@ -161,6 +161,13 @@
     color: #294172;
 }
 
+.fedmenu-content > h4 {
+    font-family: Montserrat;
+    font-size: 80%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .fedmenu-panel {
     font-family: Montserrat;
     display: inline-block;
@@ -203,6 +210,7 @@
 @media all and (max-width:  500px) {
     .fedmenu-content.fedmenu-active { top:  0%; }
     .fedmenu-content > h1 { font-size: 80%; padding: 5px }
+    .fedmenu-content > h4 { font-size: 80%; margin-top: 0; margin-bottom: 0; }
     .fedmenu-panel .fedmenu-header { font-size: 90%; }
     .fedmenu-panel { padding: 7px; font-size: 5pt; }
     .fedmenu-content {
