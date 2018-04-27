@@ -66,6 +66,7 @@ var fedmenu = function(options) { $(document).ready(function() {
             $('body', c).append('<div id="fedmenu-main-content" class="fedmenu-content"></div>');
             $('#fedmenu-main-content', c).append("<span class='fedmenu-exit'>&#x274C;</span>");
             $('#fedmenu-main-content', c).append("<h1>Fedora Infrastructure Apps</h1>");
+            $('#fedmenu-main-content', c).append("<h4><a href='https://fedoraproject.org/wiki/Legal:Main'>Legal</a></h4>");
         }
         $("#fedmenu-main-content", c).append(html);
     };
